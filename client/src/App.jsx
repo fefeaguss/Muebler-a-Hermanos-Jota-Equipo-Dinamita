@@ -1,11 +1,10 @@
-import './App.css'
-
+import Catalogo from './paginas/catalogo';
 function App() {
   
 
   return (
     <>
-    <h1>Inicio del front Hnos Jota :D</h1>
+    <Catalogo/>
     </>
   )
 }

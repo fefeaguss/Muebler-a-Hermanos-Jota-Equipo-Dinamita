@@ -1,0 +1,18 @@
+.catalogo {
+  padding: var(--espaciado-md);
+  background-color: var(--color-fondo);
+}
+
+.catalogo h2 {
+  margin-bottom: var(--espaciado-sm);
+  font-size: 1.8rem;
+  color: var(--color-principal);
+  font-family: var(--fuente-principal);
+  text-align: center;
+}
+
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaciado-sm);
+}
