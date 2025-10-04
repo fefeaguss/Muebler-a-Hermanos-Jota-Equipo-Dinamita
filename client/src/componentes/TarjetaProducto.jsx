@@ -1,7 +1,6 @@
 import '../estilos/detalleProducto.css';
 function DetalleProducto({ producto, volverAlCatalogo }) {
   
-
   return (
     <div className="detalle">
       <h2>{producto.nombre}</h2>

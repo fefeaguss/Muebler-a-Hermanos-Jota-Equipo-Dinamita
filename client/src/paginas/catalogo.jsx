@@ -1,5 +1,5 @@
 import productos from "../datos/productos";
-import TarjetaProducto from "./DetalleProducto";
+import TarjetaProducto from "../componentes/TarjetaProducto";
 import '../estilos/catalogo.css';
 
 function Catalogo({verDetalle}) {
