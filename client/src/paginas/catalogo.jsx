@@ -1,4 +1,5 @@
 import productos from "../datos/productos";
+import TarjetaProducto from "./DetalleProducto";
 import '../estilos/catalogo.css';
 
 function Catalogo({verDetalle}) {
@@ -8,11 +9,11 @@ function Catalogo({verDetalle}) {
 
             <div className="grilla">
                 {productos.map(producto => (
-                    <div key={producto.id} className="producto" onClick={() => verDetalle(producto.id)}>
-                        <img src={producto.imagen} alt={producto.nombre} />
-                        <h3>{producto.nombre}</h3>
-                        <p>${producto.precio}</p>
-                    </div>
+                    <TarjetaProducto 
+                        key={producto.id} 
+                        producto={producto} 
+                        verDetalle={verDetalle}
+                    />
                 ))}
 
             </div>
