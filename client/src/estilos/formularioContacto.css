@@ -1,0 +1,72 @@
+.formulario {
+  max-width: 600px;
+  margin: var(--espaciado-lg) auto;
+  padding: var(--espaciado-md);
+  background-color: var(--color-fondo);
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra-suave);
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulario h2 {
+  margin-top: 0;
+  color: var(--color-principal);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.formulario p {
+  color: var(--color-texto);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado-sm);
+}
+
+.formulario label {
+  font-weight: bold;
+  color: var(--color-texto);
+  margin-bottom: 0.25rem;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-blanco);
+  border-radius: var(--borde-radio);
+  font-family: var(--fuente-principal);
+  font-size: 1rem;
+  background-color: var(--color-blanco);
+  color: var(--color-texto);
+}
+
+.formulario textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formulario button {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--borde-radio);
+  cursor: pointer;
+  align-self: flex-start;
+  font-family: var(--fuente-principal);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.formulario button:hover {
+  background-color: var(--color-premium);
+  transform: scale(1.05);
+}

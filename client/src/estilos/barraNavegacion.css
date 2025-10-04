@@ -1,0 +1,73 @@
+.barra {
+  background-color: var(--color-principal);
+  color: var(--color-blanco);
+  padding: var(--espaciado-sm);
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.barra img {
+    margin-left: 3%;
+  height: 50px;
+  margin-right: var(--espaciado-sm);
+  border-radius: 50%;
+  background-color: aliceblue;
+  border: white 2px solid;
+}
+
+.barra h2 {
+  margin: 0;
+  font-family: var(--fuente-principal);
+}
+
+.barra .botones {
+  margin-top: var(--espaciado-xs);
+}
+
+.barra button {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--borde-radio);
+  cursor: pointer;
+  margin: 0.25rem;
+  font-family: var(--fuente-principal);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.barra button:hover {
+  background-color: var(--color-premium);
+  transform: scale(1.05);
+}
+
+.carrito-boton {
+  position: relative;
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--borde-radio);
+  cursor: pointer;
+  font-family: var(--fuente-principal);
+  transition: background-color 0.2s ease;
+}
+
+.carrito-boton:hover {
+  background-color: var(--color-premium);
+}
+
+.carrito-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: var(--color-premium);
+  color: var(--color-blanco);
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
