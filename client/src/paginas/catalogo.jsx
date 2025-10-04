@@ -1,5 +1,5 @@
 import productos from "../datos/productos";
-import '../estilos/Catalogo.css';
+import '../estilos/catalogo.css';
 
 function Catalogo({verDetalle}) {
     return (
@@ -14,7 +14,7 @@ function Catalogo({verDetalle}) {
                         <p>${producto.precio}</p>
                     </div>
                 ))}
-                
+
             </div>
         </div>
     )
