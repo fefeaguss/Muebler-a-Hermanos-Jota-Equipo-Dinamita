@@ -1,15 +1,21 @@
-import '../estilos/TarjetaProducto.css';
-
-function TarjetaProducto({ producto, verDetalle }) {
-    return (
-        <div className="tarjeta">
-            <img src={producto.imagen} alt={producto.nombre} />
-            <h3>{producto.nombre}</h3>
-            <p>{producto.descripcion}</p>
-            <p> <strong> ${producto.precio} </strong></p>
-            <button onClick={()=> verDetalle(producto)}>Ver mas</button>
+import '../estilos/detalleProducto.css';
+function DetalleProducto({ producto, volverAlCatalogo }) {
+  
+  return (
+    <div className="detalle">
+      <h2>{producto.nombre}</h2>
+      <img src={producto.imagen} alt={producto.nombre} style={{ width: '300px', borderRadius: '8px' }} />
+      
+      <div className='detalle-info'>
+        <p>{producto.descripcion}</p>  
+        <p><strong>Precio: ${producto.precio}</strong></p>
+        
+        <div className='botones'>
+          <button onClick={volverAlCatalogo} style={{ marginLeft: '1rem' }}>Volver al catálogo</button>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
 
-export default TarjetaProducto;
+export default DetalleProducto;

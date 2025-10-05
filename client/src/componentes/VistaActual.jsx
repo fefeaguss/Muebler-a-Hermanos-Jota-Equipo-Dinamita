@@ -1,7 +1,7 @@
 import Catalogo from "../paginas/Catalogo";
 import FormularioContacto from "../paginas/FormularioContacto";
 import DetalleProducto from "../paginas/DetalleProducto";
-import Home from "../paginas/Home";
+//import Home from "../paginas/Home";
 
 function VistaActual({ 
     vista, 

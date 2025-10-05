@@ -1,5 +1,13 @@
 import '../estilos/home.css';
-function Home({ cambiarVista }){
+import { useNavigate } from 'react-router-dom';
+
+
+
+export function Home(){
+    const navigate = useNavigate()
+
+    
+
     return(
         <div className='home'>
             <h1>Bienvenido a Mueblería Hermanos Jota</h1>
@@ -10,4 +18,3 @@ function Home({ cambiarVista }){
     )
 
 }
-export default Home;
