@@ -1,4 +1,4 @@
-import '../estilos/detalleProducto.css';
+import '../estilos/tarjetaProducto.css';
 import { NavLink } from "react-router-dom";
 
 export default function TarjetaProducto({ producto, agregarAlCarrito }) {
@@ -17,6 +17,7 @@ export default function TarjetaProducto({ producto, agregarAlCarrito }) {
         <p><strong>Precio: ${producto.precio}</strong></p>
 
         <div className="botones">
+
           <NavLink to={`/producto/${producto.id}`} className="btn-ver-detalle">
             Ver detalle
           </NavLink>
@@ -27,7 +28,6 @@ export default function TarjetaProducto({ producto, agregarAlCarrito }) {
           >
             🛒 Agregar al carrito
           </button>
-          
         </div>
       </div>
     </div>

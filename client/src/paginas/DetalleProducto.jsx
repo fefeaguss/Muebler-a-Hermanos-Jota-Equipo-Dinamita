@@ -3,6 +3,7 @@ import productos from "../datos/productos";
 import { useState } from "react";
 import "../estilos/detalleProducto.css";
 import { NavLink } from "react-router-dom";
+
 function DetalleProducto({ agregarAlCarrito }) {
   const { id } = useParams();
   const producto = productos.find(p => p.id === parseInt(id));
@@ -21,7 +22,7 @@ function DetalleProducto({ agregarAlCarrito }) {
   return (
     <div className="detalle">
       <h2>{producto.nombre}</h2>
-      <img src={producto.imagen} alt={producto.nombre} style={{ width: '300px', borderRadius: '8px' }} />
+      <img src={producto.imagen} alt={producto.nombre}  />
 
       <div className="detalle-info">
         <p>{producto.descripcion}</p>

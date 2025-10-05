@@ -28,7 +28,14 @@
   color: var(--color-texto);
 }
 
-.tarjeta button {
+.botones {
+  display: flex;
+  flex-direction: row;
+}
+
+.tarjeta .btn-agregar,
+.tarjeta .btn-ver-detalle {
+  text-decoration: none;
   background-color: var(--color-acento);
   color: white;
   border: none;
@@ -38,7 +45,7 @@
   margin-top: var(--espaciado-xs);
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.tarjeta button:hover {
+.tarjeta .btn-ver-detalle:hover {
   background-color: var(--color-premium);
   transform: scale(1.05);
 }

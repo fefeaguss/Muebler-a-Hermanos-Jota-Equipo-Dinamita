@@ -7,6 +7,9 @@
   flex-wrap: wrap;
   gap: var(--espaciado-md);
   font-family: var(--fuente-principal);
+  flex-grow: 1;
+  min-height: 80vh;
+  align-items: flex-start;
 }
 
 .detalle img {
@@ -21,6 +24,7 @@
   flex-direction: column;
   justify-content: space-between;
   color: var(--color-texto);
+  align-items: flex-start;
 }
 
 .detalle-info h2 {
@@ -45,7 +49,9 @@
   gap: var(--espaciado-xs);
 }
 
-.detalle-info button {
+.detalle-info button,
+.detalle-info .btn-volver {
+  text-decoration: none;
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: var(--borde-radio);
@@ -60,11 +66,8 @@
   background-color: var(--color-acento);
 }
 
-.detalle-info button.volver {
-  background-color: var(--color-suave);
-}
-
-.detalle-info button:hover {
+.detalle-info button:hover,
+.detalle-info .btn-volver:hover {
   background-color: var(--color-premium);
   transform: scale(1.05);
 }
