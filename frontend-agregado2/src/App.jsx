@@ -1,10 +1,13 @@
 
 /*archivo principal */
-import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import ProductList from "../components/ProductList";
-import ProductDetail from "../componentes/ProductDetail";
-import { fetchProductos } from "../api/productosApi";
+// /src/App.jsx
+
+import React, { useState, useEffect } from 'react';
+
+// Importamos solo los componentes que sí existen
+import Navbar from './Componentes-agregado/Navbar';
+import ProductList from './Componentes-agregado/ProductList';
+import ProductDetail from './Componentes-agregado/ProductDetail';
 
 function App() {
   // Estados
@@ -14,67 +17,70 @@ function App() {
   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
   const [carrito, setCarrito] = useState([]);
 
-  // Traer productos al montar la app
+  // Efecto para traer los productos fetch
   useEffect(() => {
     const cargarProductos = async () => {
-      //estado para la lista de productos que vendra de api 
-      
       try {
-        const data = await fetchProductos();
+        const res = await fetch("http://localhost:8080/api/productos");
+        if (!res.ok) {
+          throw new Error("Error en el fetch de productos");
+        }
+        const data = await res.json();
         setProductos(data);
       } catch (err) {
-        setError("Error al cargar productos");
+        setError("Error al cargar productos. Revisa que el servidor backend esté funcionando.");
       } finally {
         setLoading(false);
       }
     };
     cargarProductos();
   }, []);
+  //termina fetch
 
-  // Funciones
-  const seleccionarProducto = (producto) => {
+  // Funciones para manejar eventos
+  const handleSelectProducto = (producto) => {
     setProductoSeleccionado(producto);
   };
 
-  const volverALista = () => {
+  const handleVolverALista = () => {
     setProductoSeleccionado(null);
   };
-
-  const addToCart = (producto) => {
-    setCarrito((prev) => {
-      const existe = prev.find((p) => p.id === producto.id);
-      if (existe) {
-        return prev.map((p) =>
-          p.id === producto.id ? { ...p, cantidad: p.cantidad + 1 } : p
-        );
-      }
-      return [...prev, { ...producto, cantidad: 1 }];
-    });
+  
+  const handleAddToCart = (producto) => {
+    setCarrito(prevCarrito => [...prevCarrito, producto]);
+    alert(`${producto.nombre} añadido al carrito!`);
   };
 
-  const getCartCount = () =>
-    carrito.reduce((total, p) => total + p.cantidad, 0);
+  // Lógica para decidir qué renderizar
+  const renderContent = () => {
+    if (loading) return <p style={{ textAlign: 'center' }}>Cargando...</p>;
+    if (error) return <p style={{ textAlign: 'center', color: 'red' }}>{error}</p>;
 
-  // Render
-  if (loading) return <p>Cargando...</p>;
-  if (error) return <p>{error}</p>;
-
-  return (
-    <div>
-      <Navbar cartCount={getCartCount()} />
-      {!productoSeleccionado ? (
-        <ProductList
-          productos={productos}
-          onSelect={seleccionarProducto}
-          onAdd={addToCart}
-        />
-      ) : (
+    if (productoSeleccionado) {
+      return (
         <ProductDetail
           producto={productoSeleccionado}
-          onAdd={addToCart}
-          onBack={volverALista}
+          onAdd={handleAddToCart}
+          onBack={handleVolverALista}
         />
-      )}
+      );
+    } else {
+      return (
+        <ProductList
+          productos={productos}
+          onSelect={handleSelectProducto}
+        />
+      );
+    }
+  };
+
+  // El JSX que se muestra en pantalla
+  return (
+    <div>
+      <Navbar cartCount={carrito.length} />
+      <main>
+        {renderContent()}
+      </main>
     </div>
   );
 }
