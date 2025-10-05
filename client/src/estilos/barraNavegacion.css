@@ -8,32 +8,58 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.barra .logo{
+  display: flex;
+  align-items: center;
+  gap: 27rem;
+}
+.barra .logo img {
+  margin-left: 20px;
+  height: 40px;
+  width: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  background-color: wheat;
+}
 
 .barra h2 {
   margin: 0;
   font-family: var(--fuente-principal);
 }
 
+
 .barra .botones {
   margin-top: var(--espaciado-xs);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.barra button {
+
+.barra .botones a {
   background-color: var(--color-acento);
   color: var(--color-blanco);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: var(--borde-radio);
   cursor: pointer;
-  margin: 0.25rem;
   font-family: var(--fuente-principal);
+  text-decoration: none;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.barra button:hover {
+
+.barra .botones a:hover {
   background-color: var(--color-premium);
   transform: scale(1.05);
 }
+
+
+.barra .botones .activo {
+  background-color: var(--color-premium);
+  transform: scale(1.05);
+}
+
 
 .carrito-boton {
   position: relative;

@@ -1,18 +1,42 @@
-import "../estilos/BarraNavegacion.css";
-
-
+import "../estilos/barraNavegacion.css";
+import { NavLink } from "react-router-dom";
 
 export function BarraNavegacion() {
   return (
     <nav className="barra">
-      <img src="../../public/logo.svg" alt="" />
-      <h2>Mueblería Hermanos Jota</h2>
-      {/* <p>🛒 Carrito: {cantidadCarrito} productos</p> */}
+      <div className="logo">
+        <img src="/logo.svg" alt="Logo Hermanos Jota" />
+        <h2>Mueblería Hermanos Jota</h2>
+      </div>
+
       <div className="botones">
-        <button > Inicio </button>
-        <button > Catalogo </button>
-        <button > Contacto </button>
-        <button > 🛒 Mi Carrito  </button>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? "activo" : "")}
+        >
+          Inicio
+        </NavLink>
+
+        <NavLink
+          to="/catalogo"
+          className={({ isActive }) => (isActive ? "activo" : "")}
+        >
+          Catálogo
+        </NavLink>
+
+        <NavLink
+          to="/contacto"
+          className={({ isActive }) => (isActive ? "activo" : "")}
+        >
+          Contacto
+        </NavLink>
+
+        <NavLink
+          to="/carrito"
+          className={({ isActive }) => (isActive ? "activo" : "")}
+        >
+          🛒 Mi Carrito
+        </NavLink>
       </div>
     </nav>
   );

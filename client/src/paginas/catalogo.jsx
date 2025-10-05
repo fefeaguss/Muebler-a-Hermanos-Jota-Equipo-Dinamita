@@ -1,4 +1,4 @@
-import TarjetaProducto from "../componentes/TarjetaProducto";
+import TarjetaProducto from "../componentes/TarjetaProducto.jsx";
 import productos from "../datos/productos";
 import '../estilos/Catalogo.css';
 
