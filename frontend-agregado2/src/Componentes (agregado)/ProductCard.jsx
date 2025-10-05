@@ -1,17 +1,16 @@
-function ProductCard({ producto, onSelect, onAdd }) {
-  return (
-    <div style={{ border: "1px solid #ccc", padding: "10px", borderRadius: "8px" }}>
-      <img
-        src={producto.imagen}
-        alt={producto.nombre}
-        style={{ width: "100%", height: "150px", objectFit: "cover" }}
-      />
+
+import React from 'react';
+
+// Recibe 'producto' y 'onCardClick' desde ProductList.jsx
+const ProductCard = ({ producto, onCardClick }) => {
+  return (// Cuando se da click en la card, llama a onCardClick con el producto.
+          // esto le da aviso a la App.jsx de que se seleccionó un producto.
+    <div className='card' onClick={() => onCardClick(producto)}>
+      <img src={producto.imagen} alt={producto.nombre}/>
       <h3>{producto.nombre}</h3>
       <p>${producto.precio}</p>
-      <button onClick={() => onSelect(producto)}>Ver detalle</button>
-      <button onClick={() => onAdd(producto)}>Añadir al carrito</button>
-    </div>
+      </div>
   );
-}
+};
 
 export default ProductCard;

@@ -15,6 +15,8 @@ function App() {
   // Traer productos al montar la app
   useEffect(() => {
     const cargarProductos = async () => {
+      //estado para la lista de productos que vendra de api 
+      
       try {
         const data = await fetchProductos();
         setProductos(data);
