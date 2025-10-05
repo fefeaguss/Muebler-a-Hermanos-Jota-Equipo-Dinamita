@@ -1,6 +1,6 @@
-import productos from "../datos/productos";
 import TarjetaProducto from "../componentes/TarjetaProducto";
-import '../estilos/catalogo.css';
+import productos from "../datos/productos";
+import '../estilos/Catalogo.css';
 
 function Catalogo({verDetalle}) {
     return (
@@ -10,12 +10,11 @@ function Catalogo({verDetalle}) {
             <div className="grilla">
                 {productos.map(producto => (
                     <TarjetaProducto 
-                        key={producto.id} 
-                        producto={producto} 
+                        key={producto.id}
+                        producto={producto}
                         verDetalle={verDetalle}
-                    />
+                    />  
                 ))}
-
             </div>
         </div>
     )
