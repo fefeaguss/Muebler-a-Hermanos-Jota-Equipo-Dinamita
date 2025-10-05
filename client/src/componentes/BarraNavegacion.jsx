@@ -1,7 +1,7 @@
 import "../estilos/barraNavegacion.css";
 import { NavLink } from "react-router-dom";
 
-export function BarraNavegacion() {
+export function BarraNavegacion({cantidadCarrito}) {
   return (
     <nav className="barra">
       <div className="logo">
@@ -35,7 +35,7 @@ export function BarraNavegacion() {
           to="/carrito"
           className={({ isActive }) => (isActive ? "activo" : "")}
         >
-          🛒 Mi Carrito
+          🛒 Mi Carrito ({cantidadCarrito})
         </NavLink>
       </div>
     </nav>

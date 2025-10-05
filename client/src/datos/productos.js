@@ -1,53 +1,98 @@
 const productos = [
   {
-    id: 1,
-    nombre: "Sofá Verona",
-    descripcion: "Sofá de tres cuerpos con tapizado en lino gris.",
-    precio: 120000,
-    categoria: "Living",
-    imagen: "../../public/Mesa Comedor Pampa.png"
+    "id": 1,
+    "nombre": "Aparador Uspallata",
+    "descripcion": "Aparador de seis puertas fabricado en nogal sostenible con tiradores metálicos en acabado latón. Silueta minimalista que realza el veteado natural de la madera.",
+    "medidas": "180 x 45 x 75 cm",
+    "materiales": "Nogal macizo FSC®, herrajes de latón",
+    "acabado": "Aceite natural ecológico",
+    "peso": "68 kg",
+    "capacidad": "6 compartimentos interiores",
+    "imagen": "../../public/Mesa Comedor Pampa.png",
+    "precio": 340000
   },
   {
-    id: 2,
-    nombre: "Mesa Oslo",
-    descripcion: "Mesa de comedor de madera maciza para 6 personas.",
-    precio: 95000,
-    categoria: "Comedor",
-    imagen: "../../public/Mesa Comedor Pampa.png"
+    "id": 2,
+    "nombre": "Biblioteca Recoleta",
+    "descripcion": "Sistema modular de estantes abierto con estructura de acero Sage Green y repisas de roble claro. Versátil y funcional para cualquier espacio contemporáneo.",
+    "medidas": "100 x 35 x 200 cm",
+    "materiales": "Estructura de acero, estantes de roble",
+    "acabado": "Laca mate ecológica",
+    "capacidad": "45 kg por estante, 5 estantes ajustables",
+    "imagen": "../../public/Mesa Comedor Pampa.png",
+    "precio": 120000
   },
   {
-    id: 3,
-    nombre: "Sofá Verona",
-    descripcion: "Sofá de tres cuerpos con tapizado en lino gris.",
-    precio: 120000,
-    categoria: "Living",
-    imagen: "../../public/Mesa Comedor Pampa.png"
+    "id": 3,
+    "nombre": "Butaca Mendoza",
+    "descripcion": "Butaca tapizada en bouclé Dusty Rose con base de guatambú. Respaldo curvo que ofrece confort y diseño cálido.",
+    "medidas": "80 x 75 x 85 cm",
+    "materiales": "Guatambú macizo, tela bouclé",
+    "acabado": "Cera vegetal, tapizado premium",
+    "tapizado": "Repelente al agua y manchas",
+    "confort": "Espuma de alta densidad",
+    "imagen": "../../public/Mesa Comedor Pampa.png",
+    "precio": 85000
   },
   {
-    id: 4,
-    nombre: "Mesa Oslo",
-    descripcion: "Mesa de comedor de madera maciza para 6 personas.",
-    precio: 95000,
-    categoria: "Comedor",
-    imagen: "../../public/Mesa Comedor Pampa.png"
-  },
-    {
-    id: 5,
-    nombre: "Sofá Verona",
-    descripcion: "Sofá de tres cuerpos con tapizado en lino gris.",
-    precio: 120000,
-    categoria: "Living",
-    imagen: "../../public/Mesa Comedor Pampa.png"
+    "id": 4,
+    "nombre": "Sillón Copacabana",
+    "descripcion": "Sillón lounge en cuero cognac con base giratoria en acero Burnt Sienna. Inspirado en la estética brasilera de los 60.",
+    "medidas": "90 x 85 x 95 cm",
+    "materiales": "Cuero curtido vegetal, acero pintado",
+    "acabado": "Cuero anilina premium",
+    "rotacion": "360° silenciosa y suave",
+    "garantia": "10 años en estructura",
+    "imagen": "../../public/Mesa Comedor Pampa.png",
+    "precio": 150000
   },
   {
-    id: 6,
-    nombre: "Mesa Oslo",
-    descripcion: "Mesa de comedor de madera maciza para 6 personas.",
-    precio: 95000,
-    categoria: "Comedor",
-    imagen: "../../public/Mesa Comedor Pampa.png"
+    "id": 5,
+    "nombre": "Mesa de Centro Araucaria",
+    "descripcion": "Mesa de centro circular con sobre de mármol Patagonia y patas de nogal. Combina minimalismo con contraste de materiales.",
+    "medidas": "90 x 90 x 45 cm",
+    "materiales": "Mármol Patagonia, patas de nogal",
+    "acabado": "Mármol pulido, aceite natural en madera",
+    "peso": "42 kg",
+    "carga_maxima": "25 kg distribuidos",
+    "imagen": "../../public/Mesa Comedor Pampa.png",
+    "precio": 90000
+  },
+  {
+    "id": 6,
+    "nombre": "Mesa de Noche Aconcagua",
+    "descripcion": "Mesa de noche con cajón oculto y repisa inferior en roble FSC®. Diseño limpio y funcional.",
+    "medidas": "45 x 35 x 60 cm",
+    "materiales": "Roble macizo FSC®, herrajes soft-close",
+    "acabado": "Barniz mate de poliuretano",
+    "almacenamiento": "1 cajón + repisa inferior",
+    "caracteristicas": "Cajón con cierre suave",
+    "imagen": "../../public/Mesa Comedor Pampa.png",
+    "precio": 45000
+  },
+  {
+    "id": 7,
+    "nombre": "Cama Neuquén",
+    "descripcion": "Cama plataforma con cabecero flotante tapizado en lino natural y estructura de roble macizo.",
+    "medidas": "160 x 200 x 90 cm",
+    "materiales": "Roble macizo FSC®, lino",
+    "acabado": "Aceite natural, tapizado premium",
+    "colchon": "Compatible con colchón 160x200",
+    "caracteristicas": "Cabecero flotante acolchado",
+    "imagen": "../../public/Mesa Comedor Pampa.png",
+    "precio": 340000
+  },
+  {
+    "id": 8,
+    "nombre": "Sofá Patagonia",
+    "descripcion": "Sofá de tres cuerpos tapizado en lino Warm Alabaster con cojines de espuma HR y plumón reciclado.",
+    "medidas": "220 x 90 x 80 cm",
+    "materiales": "Madera de eucalipto FSC®",
+    "tapizado": "Lino 100% natural premium",
+    "relleno": "Espuma HR + plumón reciclado",
+    "sostenibilidad": "Materiales 100% reciclables",
+    "imagen": "../../public/Mesa Comedor Pampa.png",
+    "precio": 750000
   }
-
 ];
-
-export default productos;
+export default productos

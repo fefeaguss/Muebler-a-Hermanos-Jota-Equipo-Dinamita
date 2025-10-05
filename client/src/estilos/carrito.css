@@ -23,16 +23,22 @@
   text-align: center;
 }
 
-.carrito-panel .cerrar {
-  align-self: flex-end;
-  background-color: var(--color-principal);
+.btn-volver {
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color-acento);
   color: var(--color-blanco);
   border: none;
-  padding: 0.3rem 0.6rem;
+  padding: 0.5rem 1rem;
   border-radius: var(--borde-radio);
   cursor: pointer;
-  margin-bottom: var(--espaciado-sm);
   font-family: var(--fuente-principal);
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-volver:hover{
+  background-color: var(--color-premium);
+  transform: scale(1.05);
 }
 
 .carrito-panel ul {

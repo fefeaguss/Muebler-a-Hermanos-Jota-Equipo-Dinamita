@@ -5,6 +5,11 @@
   font-family: var(--fuente-principal);
   color: var(--color-texto);
   animation: fadeIn 0.6s ease-in;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
 }
 
 .home h1 {
@@ -19,7 +24,9 @@
   margin: 0 auto var(--espaciado-md);
 }
 
-.home button {
+.home .btn-catalogo {
+  text-decoration: none;
+  width: auto;
   background-color: var(--color-acento);
   color: var(--color-blanco);
   border: none;
@@ -29,9 +36,13 @@
   font-size: 1rem;
   font-family: var(--fuente-principal);
   transition: background-color 0.2s ease, transform 0.2s ease;
+
+  display: inline-block;
+  text-align: center;
+  margin-top: var(--espaciado-md);
 }
 
-.home button:hover {
+.home .btn-catalogo:hover {
   background-color: var(--color-premium);
   transform: scale(1.05);
 }

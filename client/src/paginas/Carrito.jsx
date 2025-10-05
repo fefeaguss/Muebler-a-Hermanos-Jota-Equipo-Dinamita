@@ -1,12 +1,13 @@
 import '../estilos/carrito.css';
-function Carrito({ productosCarrito, eliminarDelCarrito, cerrarCarrito }) {
+import { NavLink } from 'react-router-dom';
+
+export default function Carrito({ productosCarrito, eliminarDelCarrito }) {
   const total = productosCarrito.reduce(
     (suma, producto) => suma + producto.precio,
     0
   );
   return (
     <div className='carrito-panel'>
-      <button onClick={cerrarCarrito} className='cerrar'> x </button>
       <h2>🛒Carrito de Compras</h2>
 
       {productosCarrito.length === 0 ? (
@@ -26,7 +27,10 @@ function Carrito({ productosCarrito, eliminarDelCarrito, cerrarCarrito }) {
           </h3>
         </div>
       )}
+
+      <NavLink to="/catalogo" className="btn-volver">
+        Volver al catalogo
+      </NavLink>
     </div>
   );
 }
-export default Carrito;
