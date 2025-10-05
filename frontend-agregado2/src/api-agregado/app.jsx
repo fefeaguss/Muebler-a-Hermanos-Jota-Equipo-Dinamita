@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
-import ProductList from "./components/ProductList";
-import ProductDetail from "./Componentes/ProductDetail";
+import Navbar from "./Componentes-agregado/Navbar";
+import ProductList from "./Componentes-agregado/ProductList";
+import ProductDetail from "./Componentes-agregado/ProductDetail";
 import { fetchProductos } from "./api/productosApi";
 
 function App() {

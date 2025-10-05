@@ -1,30 +1,35 @@
 /*funciones fetch*/
+/*
 import { useState, useEffect } from "react";
 export default function useProductos() {
-   const [productos, setProductos] = useState([])
-   const [loading, setLoading] = useState(true);
-   const [error, setError] = useState(null);
-   const [productoSeleccionado, setProductoSeleccionado] = useState(null);
-   const [carrito, setCarrito] = useState([]);
-   
-       // Traer productos al montar la app
-   useEffect(() => { 
-     const cargarProductos = async () => {
-       try {
-        const res = await fetch("http://localhost:3000/api/productos"); 
-        if (!res.ok) throw new Error("Error en el fetch");
-        const data = await res.json();
-        setProductos(data);
-       } catch (err) {
-         setError("Error al cargar productos");
-       } finally {
-         setLoading(false);
-       }
-     };
-     cargarProductos();
+
+const [productos, setProductos] = useState([])
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+const [carrito, setCarrito] = useState([]);
+
+// Traer productos al montar la app
+
+useEffect(() => {
+  const cargarProductos = async () => {
+    try {
+          const res = await fetch("http://localhost:3000/api/productos");
+          if (!res.ok) throw new Error("Error en el fetch");
+          const data = await res.json();
+          setProductos(data);
+        } catch (err) {
+          setError("Error al cargar productos");
+        } finally {
+        setLoading(false);
+        }
+      };
+      cargarProductos();
     },[]);
     return {productos, loading, error, productoSeleccionado, carrito};
- }
+}
+*/
+
 
 
    /* Funciones
