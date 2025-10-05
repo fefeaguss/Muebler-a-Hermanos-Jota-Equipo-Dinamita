@@ -1,11 +1,11 @@
-import { useState } from "react";
-import BarraNavegacion from "./componentes/BarraNavegacion";
-import VistaActual from "./componentes/VistaActual";
-import Home from "./paginas/Home";
-import Catalogo from "./paginas/catalogo";
-import PiePagina from "./componentes/PiePagina";
-import "./index.css";
-function App() {
+import { useState } from 'react';
+import BarraNavegacion from './componentes/BarraNavegacion';
+import VistaActual from './componentes/VistaActual';
+import PiePagina from './componentes/PiePagina';
+import Carrito from './paginas/Carrito';
+import './index.css';
+
+function Aplicacion() {
   //estados globales
   const [carrito, actualizarCarrito] = useState([]);
   const [productoSeleccionado, seleccionarProducto] = useState(null);
@@ -22,14 +22,14 @@ function App() {
     actualizarCarrito(nuevoCarrito);
   }
 
-  return (
-    
-    <>
-      <BarraNavegacion
-        cantidadCarrito={0}
-        cambiarVista={() => {}}
-        cambiarVisibilidadCarrito={() => {}}
+  return(
+    <div>
+      <BarraNavegacion 
+        cantidadCarrito={carrito.length} 
+        cambiarVista={cambiarVista}
+        cambiarVisibilidadCarrito={cambiarVisibilidadCarrito}
       />
+
       <VistaActual 
         vista={vista}
         productoSeleccionado={productoSeleccionado}
@@ -38,11 +38,18 @@ function App() {
         agregarAlCarrito={agregarAlCarrito}
         eliminarDelCarrito={eliminarDelCarrito}
       />
-      <Home />
-      <Catalogo />
-      <PiePagina />
-    </>
-  );
-}
+      {
+        carrtioVisible && (
+          <Carrito
+            productosCarrito={carrito}
+            eliminarDelCarrito={eliminarDelCarrito}
+            cerrarCarrito={() => cambiarVisibilidadCarrito(false)}
+          />
+        )
+      }
 
-export default App;
+      <PiePagina />
+    </div>
+  )
+}
+export default Aplicacion;
