@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import ProductList from "../components/ProductList";
-import ProductDetail from "../components/ProductDetail";
+import ProductDetail from "../componentes/ProductDetail";
 import { fetchProductos } from "../api/productosApi";
 
 function App() {

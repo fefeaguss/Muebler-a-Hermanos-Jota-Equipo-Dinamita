@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
-import ProductDetail from "./components/ProductDetail";
+import ProductDetail from "./Componentes/ProductDetail";
 import { fetchProductos } from "./api/productosApi";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const cargarProductos = async () => {
       //estado para la lista de productos que vendra de api 
-      
+
       try {
         const data = await fetchProductos();
         setProductos(data);
