@@ -1,0 +1,44 @@
+.tarjeta {
+  background-color: white;
+  border-radius: var(--borde-radio);
+  box-shadow: var(--sombra-suave);
+  padding: var(--espaciado-sm);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.02);
+}
+
+.tarjeta img {
+  max-width: 100%;
+  border-radius: var(--borde-radio);
+  margin-bottom: var(--espaciado-xs);
+}
+
+.tarjeta h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--color-texto);
+}
+
+.tarjeta p {
+  margin: 0.25rem 0;
+  color: var(--color-texto);
+}
+
+.tarjeta button {
+  background-color: var(--color-acento);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--borde-radio);
+  cursor: pointer;
+  margin-top: var(--espaciado-xs);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.tarjeta button:hover {
+  background-color: var(--color-premium);
+  transform: scale(1.05);
+}
