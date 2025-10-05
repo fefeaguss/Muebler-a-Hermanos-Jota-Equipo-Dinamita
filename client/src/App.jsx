@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { BarraNavegacion } from "./componentes/BarraNavegacion.jsx";
 import { Home } from "./paginas/Home.jsx";
 import Catalogo from "./paginas/Catalogo.jsx";
+import FormularioContacto from "./paginas/FormularioContacto.jsx"
 import DetalleProducto from "./paginas/DetalleProducto.jsx";
 import PiePagina from "./componentes/PiePagina.jsx";
 
@@ -37,6 +38,7 @@ export function App() {
           <Route path="/" element={<Home></Home>} />
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/producto/:id" element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />} />
+          <Route path="/contacto" element = {<FormularioContacto/>}/>
         </Routes>
 
         <PiePagina />

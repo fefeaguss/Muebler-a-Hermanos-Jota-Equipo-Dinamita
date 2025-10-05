@@ -2,7 +2,7 @@ import TarjetaProducto from "../componentes/TarjetaProducto.jsx";
 import productos from "../datos/productos";
 import '../estilos/Catalogo.css';
 
-function Catalogo({verDetalle}) {
+export default function Catalogo({verDetalle}) {
     return (
         <div className="catalogo">
             <h2>Catalogo de productos</h2>
@@ -19,4 +19,3 @@ function Catalogo({verDetalle}) {
         </div>
     )
 }
-export default Catalogo;
