@@ -1,61 +1,46 @@
-import TarjetaProducto from "../componentes/TarjetaProducto.jsx";
-// import productos from "../datos/productos";
-import '../estilos/catalogo.css';
-import { useState, useEffect } from "react";
+  import useProductos from "../../api/productosApi";
+  import TarjetaProducto from "../componentes/TarjetaProducto";
+  import "../estilos/catalogo.css";
 
-export default function Catalogo({ verDetalle, agregarAlCarrito }) {
-  const [busqueda, setBusqueda] = useState("");
-  const [productos, setProductos] = useState([]);
-  const [cargando, setCargando] = useState(true);
+  export default function Catalogo({ agregarAlCarrito }) {
+    const {
+      productosFiltrados,
+      busqueda,
+      setBusqueda,
+      loading,
+      error
+    } = useProductos();
 
-  useEffect(() => {
-    // 🔄 Cargar productos desde el backend
-    fetch("http://localhost:3000/api/productos")
-      .then((res) => res.json())
-      .then((data) => {
-        setProductos(data);
-        setCargando(false);
-      })
-      .catch((error) => {
-        console.error("Error al obtener productos:", error);
-        setCargando(false);
-      });
-  }, []);
+    return (
+      <main className="catalogo-main">
+        <h1 className="titulo-catalogo">Catálogo de productos</h1>
 
-  const productosFiltrados = productos.filter(producto =>
-    producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
-  );
-
-  return (
-    <div className="catalogo">
-      <h2>Catálogo de Productos</h2>
-
-      <div className="catalogo-search">
-        <div className="search">
-          <img src="../img/search.svg" alt="Buscar" />
-          <input
-            type="text"
-            placeholder="Buscar productos..."
-            value={busqueda}
-            onChange={(e) => setBusqueda(e.target.value)}
-          />
+        <div className="catalogo-search">
+          <div className="search">
+            {/* Si tenés un ícono de lupa, podés agregarlo acá */}
+            {/* <img src="/icono-lupa.svg" alt="Buscar" /> */}
+            <input
+              type="text"
+              placeholder="Buscar productos..."
+              value={busqueda}
+              onChange={(e) => setBusqueda(e.target.value)}
+            />
+          </div>
         </div>
-      </div>
 
-      {cargando ? (
-        <p>Cargando productos...</p>
-      ) : (
-        <div className="grilla">
-          {productosFiltrados.map((producto) => (
+        {loading && <p>Cargando productos...</p>}
+        {error && <p>{error}</p>}
+
+        <section className="grid-productos">
+          {productosFiltrados.map(producto => (
             <TarjetaProducto
               key={producto.id}
               producto={producto}
-              agregarAlCarrito={agregarAlCarrito}
-              verDetalle={verDetalle}
+               agregarAlCarrito={() => agregarAlCarrito(producto)}
+
             />
           ))}
-        </div>
-      )}
-    </div>
-  );
-}
+        </section>
+      </main>
+    );
+  }

@@ -1,18 +1,15 @@
 import "../estilos/home.css";
-import { NavLink } from "react-router-dom";
-import productos from "../datos/productos";
+import useProductos from "../../api/productosApi";
+
 
 export function Home() {
+
+
+
+ const { productos, loading, error } = useProductos();
+
   return (
     <div className="home">
-
-      <h1>Bienvenido a Mueblería Hermanos Jota</h1>
-      <p>Descubrí el arte de vivir con nuestros muebles exclusivos.</p>
-
-      <NavLink to="/catalogo" className="btn-catalogo">
-        Ver catalogo
-      </NavLink>
-
       <section className="presentacion">
         <div className="presentacion-left">
           <h1>Calidez y nostalgia que envuelve</h1>
@@ -43,10 +40,13 @@ export function Home() {
           <h2>Productos Destacados</h2>
         </div>
 
+        {loading && <p>Cargando productos...</p>}
+        {error && <p>{error}</p>}
+
         <div id="productosGrid" className="productos-grid">
-          {productos.slice(0, 3).map(producto => (
+          {productos.slice(0, 4).map(producto => (
             <div key={producto.id} className="producto-card">
-              <img src={producto.imagen} alt={producto.nombre} />
+              <img src={`http://localhost:3000${producto.imagen}`} alt={producto.nombre} />
               <h3>{producto.nombre}</h3>
               <p>${producto.precio.toLocaleString()}</p>
             </div>

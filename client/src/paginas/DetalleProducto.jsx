@@ -8,7 +8,6 @@ function DetalleProducto({ agregarAlCarrito }) {
   const [cargando, setCargando] = useState(true);
   const [agregado, setAgregado] = useState(false);
 
-  // 🔄 Traer el producto desde el backend
   useEffect(() => {
     fetch(`http://localhost:3000/api/productos/${id}`)
       .then((res) => {
@@ -25,8 +24,8 @@ function DetalleProducto({ agregarAlCarrito }) {
       });
   }, [id]);
 
-  if (cargando) return <p>Cargando producto...</p>;
-  if (!producto) return <p>Producto no encontrado</p>;
+  if (cargando) return <p className="detalle-cargando">Cargando producto...</p>;
+  if (!producto) return <p className="detalle-error">Producto no encontrado</p>;
 
   const manejarAgregar = () => {
     agregarAlCarrito(producto);
@@ -34,42 +33,38 @@ function DetalleProducto({ agregarAlCarrito }) {
     setTimeout(() => setAgregado(false), 2000);
   };
 
-  // 🔍 Filtramos las claves que no queremos mostrar
   const clavesExcluidas = ["id", "nombre", "imagen", "precio", "descripcion"];
   const detallesExtra = Object.entries(producto).filter(
     ([clave]) => !clavesExcluidas.includes(clave)
   );
 
   return (
-    <div className="detalle">
-      <h2>{producto.nombre}</h2>
-      <img src={`http://localhost:3000${producto.imagen}`} alt={producto.nombre} />
+    <section className="detalle-producto">
+      <div className="detalle-imagen">
+        <img src={`http://localhost:3000${producto.imagen}`} alt={producto.nombre} />
+      </div>
 
-      <div className="detalle-info">
-        <p className="descripcion">{producto.descripcion}</p>
-        <p className="precio">
-          <strong>Precio:</strong> ${producto.precio}
-        </p>
+      <div className="detalle-contenido">
+        <h2>{producto.nombre}</h2>
+        <p className="detalle-descripcion">{producto.descripcion}</p>
+        <p className="detalle-precio"><strong>Precio:</strong> ${producto.precio}</p>
 
-        <ul className="lista-detalles">
+        <ul className="detalle-lista">
           {detallesExtra.map(([clave, valor]) => (
             <li key={clave}>
-              <strong>{clave.charAt(0).toUpperCase() + clave.slice(1)}:</strong>{" "}
-              {valor}
+              <strong>{clave.charAt(0).toUpperCase() + clave.slice(1)}:</strong> {valor}
             </li>
           ))}
         </ul>
 
-        {agregado && <p className="confirmacion">Producto agregado al carrito ✅</p>}
+        {agregado && <p className="detalle-confirmacion">Producto agregado al carrito ✅</p>}
 
-        <div className="botones">
+        <div className="detalle-botones">
           <button onClick={manejarAgregar}>🛒 Añadir al carrito</button>
-          <NavLink to="/catalogo" className="btn-volver">
-            ← Volver al catálogo
-          </NavLink>
+          <NavLink to="/catalogo" className="btn-volver">← Volver al catálogo</NavLink>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

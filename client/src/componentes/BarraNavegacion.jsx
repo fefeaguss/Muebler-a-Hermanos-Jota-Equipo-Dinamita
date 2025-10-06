@@ -1,45 +1,27 @@
 import "../estilos/barraNavegacion.css";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-export function BarraNavegacion({cantidadCarrito}) {
+export function BarraNavegacion({ cantidadCarrito, alternarVisibilidadCarrito  }) {
+  const navigate = useNavigate();
+
   return (
-    <nav className="barra">
-      <div className="logo">
+    <header className="barra">
+      <div className="barra-logo" onClick={() => navigate("/")}>
         <img src="/logo.svg" alt="Logo Hermanos Jota" />
+      </div>
+
+      <div className="barra-nombre">
         <h2>Mueblería Hermanos Jota</h2>
       </div>
 
-      <div className="botones">
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? "activo" : "")}
-        >
-          Inicio
-        </NavLink>
-
-        <NavLink
-          to="/catalogo"
-          className={({ isActive }) => (isActive ? "activo" : "")}
-        >
-          Catálogo
-        </NavLink>
-
-        <NavLink
-          to="/contacto"
-          className={({ isActive }) => (isActive ? "activo" : "")}
-        >
-          Contacto
-        </NavLink>
-
-        <NavLink
-          to="/carrito"
-          className={({ isActive }) => (isActive ? "activo" : "")}
-        >
-          🛒 Mi Carrito ({cantidadCarrito})
-        </NavLink>
-      </div>
-    </nav>
+      <nav className="barra-links">
+        <a onClick={() => navigate("/")}>Inicio</a>
+        <a onClick={() => navigate("/catalogo")}>Catálogo</a>
+        <a onClick={() => navigate("/contacto")}>Contacto</a>
+        <a onClick={alternarVisibilidadCarrito}>
+  🛒 Mi Carrito ({cantidadCarrito})
+</a>
+      </nav>
+    </header>
   );
 }
-
-

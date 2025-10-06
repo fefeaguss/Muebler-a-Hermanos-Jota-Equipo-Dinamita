@@ -1,90 +1,84 @@
+/* ---------- Barra principal ---------- */
 .barra {
-  background-color: var(--color-principal);
-  color: var(--color-blanco);
-  padding: var(--espaciado-sm);
-  box-shadow: var(--sombra-suave);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  background-color: whitesmoke;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 90px;
+  padding: 0 40px;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
 }
-.barra .logo{
+
+/* ---------- Logo a la izquierda ---------- */
+.barra-logo {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 27rem;
-}
-.barra .logo img {
-  margin-left: 20px;
-  height: 40px;
-  width: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  background-color: white;
+  cursor: pointer;
 }
 
-.barra h2 {
+.barra-logo img {
+  width: 50px;
+  height: auto;
+}
+
+/* ---------- Nombre centrado ---------- */
+.barra-nombre {
+  flex: 1;
+  text-align: center;
+}
+
+.barra-nombre h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #A0522D;
   margin: 0;
-  font-family: var(--fuente-principal);
 }
 
-
-.barra .botones {
-  margin-top: var(--espaciado-xs);
+/* ---------- Enlaces a la derecha ---------- */
+.barra-links {
+  flex: 1;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  justify-content: flex-end;
+  gap: 30px;
 }
 
-
-.barra .botones a {
-  background-color: var(--color-acento);
-  color: var(--color-blanco);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: var(--borde-radio);
+.barra-links a {
   cursor: pointer;
-  font-family: var(--fuente-principal);
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #A0522D;
+  font-weight: 600;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 5px;
 }
 
-
-.barra .botones a:hover {
-  background-color: var(--color-premium);
-  transform: scale(1.05);
+.barra-links a:hover {
+  color: #C47A6D;
+  border-bottom: 2px solid #C47A6D;
 }
 
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 768px) {
+  .barra {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+  }
 
-.barra .botones .activo {
-  background-color: var(--color-premium);
-  transform: scale(1.05);
-}
+  .barra-nombre {
+    margin: 12px 0;
+  }
 
-
-.carrito-boton {
-  position: relative;
-  background-color: var(--color-acento);
-  color: var(--color-blanco);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: var(--borde-radio);
-  cursor: pointer;
-  font-family: var(--fuente-principal);
-  transition: background-color 0.2s ease;
-}
-
-.carrito-boton:hover {
-  background-color: var(--color-premium);
-}
-
-.carrito-badge {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background-color: var(--color-premium);
-  color: var(--color-blanco);
-  font-size: 0.75rem;
-  padding: 2px 6px;
-  border-radius: 50%;
-  font-weight: bold;
+  .barra-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
 }

@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Releway', 'Roboto',sans-serif;
-  background-color: var(--color-fondo);
+  background-color: whitesmoke;
   color: var(--color-texto);
   margin: 0;
   padding: 0;

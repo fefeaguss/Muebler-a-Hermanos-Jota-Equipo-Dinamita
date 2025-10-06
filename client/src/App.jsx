@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { BarraNavegacion } from "./componentes/BarraNavegacion.jsx";
 import { Home } from "./paginas/Home.jsx";
-import Catalogo from "./paginas/Catalogo.jsx";
+import Catalogo from "./paginas/catalogo.jsx";
 import FormularioContacto from "./paginas/FormularioContacto.jsx";
 import Carrito from "./paginas/Carrito.jsx";
 import DetalleProducto from "./paginas/DetalleProducto.jsx";
@@ -42,17 +42,15 @@ export function App() {
             element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />}
           />
           <Route path="/contacto" element={<FormularioContacto />} />
-          <Route
-            path="/carrito"
-            element={
-              <Carrito
-                productosCarrito={carrito}
-                eliminarDelCarrito={eliminarDelCarrito}
-              />
-            }
-          />
+         
            
         </Routes>
+        <Carrito
+  productosCarrito={carrito}
+  eliminarDelCarrito={eliminarDelCarrito}
+  visible={carritoVisible}
+  cerrar={() => setCarritoVisible(false)}/>
+          
 
         <PiePagina />
       </BrowserRouter>

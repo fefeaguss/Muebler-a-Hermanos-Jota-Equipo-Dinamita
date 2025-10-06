@@ -1,72 +1,109 @@
 .formulario {
-  max-width: 600px;
-  margin: var(--espaciado-lg) auto;
-  padding: var(--espaciado-md);
-  background-color: var(--color-fondo);
-  border-radius: var(--borde-radio);
-  box-shadow: var(--sombra-suave);
-  font-family: var(--fuente-principal);
-  color: var(--color-texto);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 800px;
+  margin: 80px auto;               /* 🔥 Centrado horizontal */
+  padding: 40px;
+  background-color: #fffaf5;
+  border-radius: 16px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: none;                /* ❌ Eliminamos la sombra */
+  border: 2px solid #F5E6D3;       /* ✅ Opcional: borde suave para definir el bloque */
 }
 
 .formulario h2 {
-  margin-top: 0;
-  color: var(--color-principal);
-  font-size: 1.8rem;
   text-align: center;
+  font-size: 2.2rem;
+  color: #A0522D;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
+/* ---------- Mensaje de confirmación ---------- */
 .formulario p {
-  color: var(--color-texto);
-  font-size: 1.1rem;
   text-align: center;
+  font-size: 1rem;
+  color: #333;
+  margin-top: 20px;
 }
 
-.formulario form {
+/* ---------- Formulario ---------- */
+form {
   display: flex;
   flex-direction: column;
-  gap: var(--espaciado-sm);
+  gap: 24px;
+  padding-right: 30px;
 }
 
-.formulario label {
-  font-weight: bold;
-  color: var(--color-texto);
-  margin-bottom: 0.25rem;
-}
-
-.formulario input,
-.formulario textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid var(--color-blanco);
-  border-radius: var(--borde-radio);
-  font-family: var(--fuente-principal);
+/* ---------- Etiquetas ---------- */
+label {
   font-size: 1rem;
-  background-color: var(--color-blanco);
-  color: var(--color-texto);
+  font-weight: 600;
+  color: #A0522D;
+  margin-bottom: 6px;
+  display: block;
 }
 
-.formulario textarea {
-  resize: vertical;
-  min-height: 100px;
+/* ---------- Inputs y textarea ---------- */
+input,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #F5E6D3;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease;
+  resize: none; /* 🔒 Evita que el textarea se agrande o achique */
 }
 
-.formulario button {
-  background-color: var(--color-acento);
-  color: var(--color-blanco);
+input::placeholder,
+textarea::placeholder {
+  color: #aaa;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #A0522D;
+}
+
+/* ---------- Botón ---------- */
+button[type="submit"] {
+  background-color: #A0522D;
+  color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: var(--borde-radio);
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
-  align-self: flex-start;
-  font-family: var(--fuente-principal);
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
 }
 
-.formulario button:hover {
-  background-color: var(--color-premium);
-  transform: scale(1.05);
+button[type="submit"]:hover {
+  background-color: #8B4513;
+}
+
+/* ---------- Responsive ---------- */
+@media screen and (max-width: 480px) {
+  .formulario {
+    padding: 30px 20px;
+  }
+
+  .formulario h2 {
+    font-size: 1.8rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.95rem;
+  }
+
+  button[type="submit"] {
+    font-size: 0.95rem;
+  }
 }
