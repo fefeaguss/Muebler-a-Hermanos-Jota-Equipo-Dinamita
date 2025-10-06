@@ -14,14 +14,15 @@ import "./index.css";
 export function App() {
   // //estados globales
   const [carrito, actualizarCarrito] = useState([]);
-  // const [productoSeleccionado, seleccionarProducto] = useState(null);
-  // //const [vista, cambiarVista] = useState('home'); // 'catalogo', 'detalle', 'carrito', 'contacto'
-  // const [carrtioVisible, cambiarVisibilidadCarrito] = useState(false);
-
   const agregarAlCarrito = (producto) => {
     actualizarCarrito([...carrito, producto]);
   };
 
+  const  [carritoVisible, setCarritoVisible] = useState(false); 
+
+  const alternarVisibilidadCarrito = () => {
+    setCarritoVisible(!carritoVisible);
+  };
   const eliminarDelCarrito = (indice) => {
     const nuevoCarrito = [...carrito];
     nuevoCarrito.splice(indice, 1);
@@ -31,11 +32,11 @@ export function App() {
   return (
     <>
       <BrowserRouter>
-        <BarraNavegacion cantidadCarrito={carrito.length} />
+        <BarraNavegacion cantidadCarrito={carrito.length} alternarVisibilidadCarrito={alternarVisibilidadCarrito}/>
 
         <Routes>
           <Route path="/" element={<Home></Home>} />
-          <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/catalogo" element={<Catalogo agregarAlCarrito={agregarAlCarrito}/>} />
           <Route
             path="/producto/:id"
             element={<DetalleProducto agregarAlCarrito={agregarAlCarrito} />}
@@ -50,6 +51,7 @@ export function App() {
               />
             }
           />
+           
         </Routes>
 
         <PiePagina />

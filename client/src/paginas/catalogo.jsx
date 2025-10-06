@@ -1,21 +1,45 @@
 import TarjetaProducto from "../componentes/TarjetaProducto.jsx";
 import productos from "../datos/productos";
-import '../estilos/Catalogo.css';
+import '../estilos/catalogo.css';
+import { useState } from "react";
 
-export default function Catalogo({verDetalle}) {
-    return (
-        <div className="catalogo">
-            <h2>Catalogo de productos</h2>
+export default function Catalogo({ verDetalle, agregarAlCarrito }) {
+  const [busqueda, setBusqueda] = useState("");
 
-            <div className="grilla">
-                {productos.map(producto => (
-                    <TarjetaProducto 
-                        key={producto.id}
-                        producto={producto}
-                        verDetalle={verDetalle}
-                    />  
-                ))}
-            </div>
+  // Filtrar productos según búsqueda
+  const productosFiltrados = productos.filter(producto =>
+    producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
+  );
+
+  return (
+    <div className="catalogo">
+      {/* Título principal */}
+      <h2>Catálogo de Productos</h2>
+
+      {/* Barra de búsqueda */}
+      <div className="catalogo-search">
+        <div className="search">
+          <img src="../img/search.svg" alt="Buscar" />
+          <input
+            type="text"
+            placeholder="Buscar productos..."
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
+          />
         </div>
-    )
+      </div>
+
+      {/* Grilla de productos */}
+      <div className="grilla">
+        {productosFiltrados.map(producto => (
+          <TarjetaProducto
+            key={producto.id}
+            producto={producto}
+            verDetalle={verDetalle}
+            agregarAlCarrito={agregarAlCarrito}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }

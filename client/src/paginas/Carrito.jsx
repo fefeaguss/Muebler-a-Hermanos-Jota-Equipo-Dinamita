@@ -29,7 +29,7 @@ export default function Carrito({ productosCarrito, eliminarDelCarrito }) {
       )}
 
       <NavLink to="/catalogo" className="btn-volver">
-        Volver al catalogo
+        Volver 
       </NavLink>
     </div>
   );

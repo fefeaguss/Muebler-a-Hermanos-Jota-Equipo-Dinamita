@@ -5,7 +5,7 @@ export default function TarjetaProducto({ producto, agregarAlCarrito }) {
 
   return (
     <div className="tarjeta">
-      <h2>{producto.nombre}</h2>
+      <h3>{producto.nombre}</h3>
 
       <img 
         src={producto.imagen} 
