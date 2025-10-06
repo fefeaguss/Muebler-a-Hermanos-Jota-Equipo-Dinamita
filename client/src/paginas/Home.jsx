@@ -8,6 +8,8 @@ export function Home() {
 
  const { productos, loading, error } = useProductos();
 
+ const collageProductos = productos.slice(0, 3);
+
   return (
     <div className="home">
       <section className="presentacion">
@@ -21,16 +23,21 @@ export function Home() {
 
         <div className="presentacion-right">
           <div className="collage">
-            <div className="collage-item grande">
-              <img src="../../public/Mesa Comedor Pampa.png" alt="Biblioteca Recoleta" />
-            </div>
-            <div className="collage-item vertical">
-              <img src="../../public/Mesa Comedor Pampa.png" alt="Aparador Uspallata" />
-            </div>
-            <div className="collage-item cuadrado">
-              <img src="../../public/Mesa Comedor Pampa.png" alt="Escritorio Costa" />
-            </div>
-          </div>
+  {collageProductos.length >= 3 && (
+    <>
+      <div className="collage-item grande">
+        <img src={`http://localhost:3000${collageProductos[0].imagen}`} alt={collageProductos[0].nombre} />
+      </div>
+      <div className="collage-item vertical">
+        <img src={`http://localhost:3000${collageProductos[1].imagen}`} alt={collageProductos[1].nombre} />
+      </div>
+      <div className="collage-item cuadrado">
+        <img src={`http://localhost:3000${collageProductos[2].imagen}`} alt={collageProductos[2].nombre} />
+      </div>
+    </>
+  )}
+</div>
+
         </div>
       </section>
 
