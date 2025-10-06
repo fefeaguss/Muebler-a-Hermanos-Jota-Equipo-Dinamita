@@ -13,7 +13,7 @@ export default function TarjetaProducto({ producto, agregarAlCarrito }) {
       />
 
       <div className="detalle-info">
-        <p>{producto.descripcion}</p>
+        <p>{producto.materiales}</p>
         <p><strong>Precio: ${producto.precio}</strong></p>
 
         <div className="botones">
