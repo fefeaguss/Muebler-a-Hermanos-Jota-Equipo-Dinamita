@@ -8,7 +8,7 @@
     "acabado": "Aceite natural ecológico",
     "peso": "68 kg",
     "capacidad": "6 compartimentos interiores",
-    "imagen": "../img/Aparador Uspallata.png",
+    "imagen": "/img/Aparador Uspallata.png",
     "precio": 340000
   },
   {
@@ -19,7 +19,7 @@
     "materiales": "Estructura de acero, estantes de roble",
     "acabado": "Laca mate ecológica",
     "capacidad": "45 kg por estante, 5 estantes ajustables",
-    "imagen": "../img/Biblioteca Recoleta.png",
+    "imagen": "/img/Biblioteca Recoleta.png",
     "precio": 120000
   },
   {
@@ -31,7 +31,7 @@
     "acabado": "Cera vegetal, tapizado premium",
     "tapizado": "Repelente al agua y manchas",
     "confort": "Espuma de alta densidad",
-    "imagen": "../img/Butaca Mendoza.png",
+    "imagen": "/img/Butaca Mendoza.png",
     "precio": 85000
   },
   {
@@ -43,7 +43,7 @@
     "acabado": "Cuero anilina premium",
     "rotacion": "360° silenciosa y suave",
     "garantia": "10 años en estructura",
-    "imagen": "../img/Sillón Copacabana.png",
+    "imagen": "/img/Sillón Copacabana.png",
     "precio": 150000
   },
   {
@@ -55,7 +55,7 @@
     "acabado": "Mármol pulido, aceite natural en madera",
     "peso": "42 kg",
     "carga_maxima": "25 kg distribuidos",
-    "imagen": "../img/Mesa de Centro Araucaria.png",
+    "imagen": "/img/Mesa de Centro Araucaria.png",
     "precio": 90000
   },
   {
@@ -67,7 +67,7 @@
     "acabado": "Barniz mate de poliuretano",
     "almacenamiento": "1 cajón + repisa inferior",
     "caracteristicas": "Cajón con cierre suave",
-    "imagen": "../img/Mesa de Noche Aconcagua.png",
+    "imagen": "/img/Mesa de Noche Aconcagua.png",
     "precio": 45000
   },
   {
@@ -79,7 +79,7 @@
     "acabado": "Aceite natural, tapizado premium",
     "colchon": "Compatible con colchón 160x200",
     "caracteristicas": "Cabecero flotante acolchado",
-    "imagen": "../img/Cama-neuquén(sin fondo).png",
+    "imagen": "/img/Cama-neuquén(sin fondo).png",
     "precio": 340000
   },
   {
@@ -91,7 +91,7 @@
     "tapizado": "Lino 100% natural premium",
     "relleno": "Espuma HR + plumón reciclado",
     "sostenibilidad": "Materiales 100% reciclables",
-    "imagen": "../img/Sofá Patagonia.png",
+    "imagen": "/img/Sofá Patagonia.png",
     "precio": 750000
   }
 ]

@@ -7,11 +7,7 @@ export default function TarjetaProducto({ producto, agregarAlCarrito }) {
     <div className="tarjeta">
       <h3>{producto.nombre}</h3>
 
-      <img 
-        src={producto.imagen} 
-        alt={producto.nombre} 
-      />
-
+      <img src={`http://localhost:3000${producto.imagen}`} alt={producto.nombre} />
       <div className="detalle-info">
         <p>{producto.materiales}</p>
         <p><strong>Precio: ${producto.precio}</strong></p>
